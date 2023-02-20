@@ -12,7 +12,7 @@ const introObj = {
 
 //47都道府県の画像データ
 const imgObj = {
-    hokkaido: "https://github.com/hiroshiy1/FND14-presentation/blob/5cc9a94df187e23d5d52fe46f98f7c2a496a8e2b/img/1.png"
+    hokkaido: "img/1.png"
 };
 
 //スリープ関数
