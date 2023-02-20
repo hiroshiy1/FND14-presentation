@@ -12,7 +12,7 @@ const introObj = {
 
 //47都道府県の画像データ
 const imgObj = {
-    hokkaido: ["C:\\Users\\hiroshiy\\Downloads\\FND14\\dig-foundations\\japan_responsive_map\\img\\hokkaido\\1.png", "C:\\Users\\hiroshiy\\Downloads\\FND14\\dig-foundations\\japan_responsive_map\\img\\hokkaido\\2.png", "C:\\Users\\hiroshiy\\Downloads\\FND14\\dig-foundations\\japan_responsive_map\\img\\hokkaido\\3.png", "C:\\Users\\hiroshiy\\Downloads\\FND14\\dig-foundations\\japan_responsive_map\\img\\hokkaido\\4.png", "C:\\Users\\hiroshiy\\Downloads\\FND14\\dig-foundations\\japan_responsive_map\\img\\hokkaido\\5.png"]
+    hokkaido: ["1.png"]
 };
 
 //スリープ関数
