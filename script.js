@@ -107,7 +107,6 @@ const imgObj = {
     kagoshima: ["img/kago1.png"],
     okinawa: ["img/oki1.png"],
 };
-};
 
 //スリープ関数
 function sleep(waitMsec) {
