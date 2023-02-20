@@ -56,28 +56,6 @@ function infoPickup(event) {
 
     //タッチフラグをリターンする
     return 1;
-
-    // //参考画像の表示
-    // while (flag === 0) {
-
-    //     //カウントの初期化
-    //     if (changeCnt === 5) {
-    //         changeCnt = 0;
-    //         flag = 1;
-    //     }
-
-    //     //参考画像の出力
-
-
-    //     //スリープ
-    //     sleep(5000);
-
-    //     console.log(changeCnt);
-
-    //     //カウントアップ
-    //     changeCnt++;
-
-    // }
 }
 
 //マウスカーソルを都道府県のBox上から移動した場合にポップアップを消す
