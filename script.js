@@ -12,7 +12,7 @@ const introObj = {
 
 //47都道府県の画像データ
 const imgObj = {
-    hokkaido: ["https://github.com/hiroshiy1/FND14-presentation/blob/180a1d5408c08551f6174af334136513280feab8/1.png"]
+    hokkaido: "https://github.com/hiroshiy1/FND14-presentation/blob/180a1d5408c08551f6174af334136513280feab8/1.png"
 };
 
 //スリープ関数
@@ -49,7 +49,7 @@ function infoPickup(event) {
 
     //ポップアップに情報を挿入
     intro.appendChild(pushInfo);
-    pushImg.setAttribute("src", imgObj["hokkaido"][changeCnt]);
+    pushImg.setAttribute("src", imgObj["hokkaido"]);
 
     //ポップアップに画像を挿入
     intro.appendChild(pushImg);
