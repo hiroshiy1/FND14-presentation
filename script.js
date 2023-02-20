@@ -12,7 +12,7 @@ const introObj = {
 
 //47都道府県の画像データ
 const imgObj = {
-    hokkaido: "/workspaces/FND14-presentation/img/1.png"
+    hokkaido: "img/1.png"
 };
 
 //スリープ関数
