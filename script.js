@@ -142,6 +142,14 @@ function infoPickup(event) {
     pushInfo.appendChild(pushInfoTitle);
     pushInfo.appendChild(pushInfoAdv);
 
+    //参考元情報
+    // const pushWiki = document.createElement("div");
+    // pushWiki.classList.add("wiki");
+    const pushWikiInfo = document.createElement("p");
+    pushWikiInfo.classList.add("wiki");
+    pushWikiInfo.textContent = "参考元：Wikipedia";
+    pushInfo.appendChild(pushWikiInfo);
+
     //ポップアップを可視化
     intro.style.visibility = (intro.style.visibility == "visible") ? "hidden" : "visible";
 
@@ -150,6 +158,7 @@ function infoPickup(event) {
 
     //ポップアップに情報を挿入
     intro.appendChild(pushInfo);
+    // intro.appendChild(pushWiki);
 
     //タッチフラグをリターンする
     return 1;
@@ -162,7 +171,7 @@ function infoDelete() {
     const intro = document.getElementById("intro");
     const popPop = document.querySelector(".image");
     const popInfo = document.querySelector(".right");
-    // const popImg = document.querySelector(".Img");
+    // const popWiki = document.querySelector(".wiki");
 
     //ポップアップを非可視化
     intro.style.visibility = (intro.style.visibility == "visible") ? "hidden" : "visible";
@@ -170,6 +179,7 @@ function infoDelete() {
     //ポップアップに挿入された情報の削除
     intro.removeChild(popPop);
     intro.removeChild(popInfo);
+    // intro.removeChild(popWiki);
 
     //タッチフラグをリターンする
     return 0;
