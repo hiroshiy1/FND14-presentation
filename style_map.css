@@ -544,14 +544,53 @@ a:hover {
 } /* レスポンシブ max-500px */
 
 /* 追加 */
+.titleImg {
+	margin: 0 0 0 200px;
+}
+
+.zenkokunipponzukan{
+	display: block;
+}
+
 .tips {
+	display: flex;
+	/*横並び*/
+
 	position: absolute;
 	visibility: hidden;
-	background-color: #666666;
-	margin-left: 2%;
-	padding: 1em;
+	background-color: #EEEEEE;
+	width: 600px;
+}
 
-	width: 580px;
-	height: 190px;
+.tips .image {
+	/*画像サイズ指定*/
+	margin: 0;
+	padding: 0;
+}
 
+.tips .image img {
+	/* width: 100%; */
+	width: :auto;
+	height: 200px;
+}
+
+.tips .right {
+	margin: 0 0 0 20px;
+	padding: 0;
+}
+
+.tips .title {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 18px;
+	/* text-align: center; */
+	vertical-align: -10px;
+}
+
+.tips .text {
+	margin: 10px 0 0;
+	padding: 0.1cm;
+	font-size: 9px;
+	line-height: 1;
 }
