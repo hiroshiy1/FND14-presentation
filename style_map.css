@@ -594,3 +594,13 @@ a:hover {
 	font-size: 9px;
 	line-height: 1;
 }
+
+.tips .wiki {
+	display: block;
+	position: absolute;
+	text-align: right;
+	bottom:0;
+	right: 0;
+	font-size: 6px;
+	padding: 0.1cm;
+}
