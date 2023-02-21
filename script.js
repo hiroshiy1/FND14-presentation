@@ -20,7 +20,7 @@ const introObj = {
     gunma: "群馬県（ぐんまけん）は、日本の関東地方に位置する県。県庁所在地は前橋市。米麦栽培・養蚕・繊維工業などの伝統産業に加え、畜産・野菜栽培・機械工業が盛んで、県北西部は温泉・保養地である。利根川上流ダム群の豊かな水量は県内はもとより、東京都を始めとする関東の電力・上水道の供給源となっている。県南東部は都市化が進み、首都圏整備法の都市開発区域に指定され、工業地域を形成している。",
     saitama: "埼玉県（さいたまけん）は、日本の関東地方に位置する県。県庁所在地はさいたま市。",
     chiba: "千葉県（ちばけん）は、日本の関東地方に位置する県。県庁所在地は千葉市。首都圏を構成し、都道府県人口・人口密度は第6位、県の財政力指数は全国第5位、面積は第28位の規模である。",
-    tokyo: "東京都（とうきょうと）は、日本の首都。関東地方に位置する都。都庁所在地は新宿区。特別区（特別区23区）、多摩地域（26市と西多摩郡3町1村）および島嶼部（2町7村）からなる。関東南西部にあって東西に細長い都域を有し、東部は東京湾に面する。西部は雲取山を最高峰とする関東山地となる。行政機関、金融機関や大企業などが集中し、新聞・放送・出版などの文化面、大学・研究機関などの教育・学術面においても日本の中枢をなす。交通面でも鉄道網、道路網、航空路の中心。世界最大級の人口を有する国際的大都市である。東京都と周辺7県で首都圏を構成している。特に東京圏（東京都・神奈川県・千葉県・埼玉県）の総人口は約3500万人に達し、日本の人口の約30%を占める。東京都市圏の人口は世界最大である。",
+    tokyo: "東京都（とうきょうと）は、日本の首都。関東地方に位置する都。都庁所在地は新宿区。特別区（特別区23区）、多摩地域（26市と西多摩郡3町1村）および島嶼部（2町7村）からなる。",
     kanagawa: "神奈川県（かながわけん）は、日本の関東地方に位置する県。県庁所在地は横浜市。",
     nigata: "新潟県（にいがたけん）は、日本の県。県庁所在地は新潟市。",
     toyama: "富山県（とやまけん）は、日本の中部地方に位置する県。県庁所在地は富山市。中部地方の日本海側、新潟県を含めた場合の北陸地方のほぼ中央にある。",
@@ -53,7 +53,7 @@ const introObj = {
     oita: "大分県（おおいたけん）は、日本の九州地方に位置する県。県庁所在地は大分市。全国的に知名度が高い別府温泉や由布院温泉をはじめとする多くの温泉を有し、源泉数（4,445か所）、湧出量（279,253リットル/分）ともに日本一であり、「日本一のおんせん県おおいた」をキャッチフレーズに温泉をアピールしている。",
     kumamoto: "熊本県（くまもとけん）は、日本の九州地方に位置する県。県庁所在地は熊本市。令制国の肥後国に当たる。有明海、不知火海、東シナ海に面している。",
     miyazaki: "宮崎県（みやざきけん）は、日本の九州地方に位置する県。県庁所在地は宮崎市。",
-    kagoshima: "鹿児島県（かごしまけん）は、日本の九州地方に位置する県。県庁所在地は鹿児島市。九州島の南側には離島（薩南諸島）が点在する[1]。九州島の部分は県本土と表現され、2つの半島（薩摩半島・大隅半島）を有する。霧島山、桜島、種子島宇宙センター、世界自然遺産の屋久島、奄美大島や徳之島などがあり、自然・文化・観光・産業などの面において、豊富な資源を有している。",
+    kagoshima: "鹿児島県（かごしまけん）は、日本の九州地方に位置する県。県庁所在地は鹿児島市。九州島の南側には離島（薩南諸島）が点在する。九州島の部分は県本土と表現され、2つの半島（薩摩半島・大隅半島）を有する。霧島山、桜島、種子島宇宙センター、世界自然遺産の屋久島、奄美大島や徳之島などがあり、自然・文化・観光・産業などの面において、豊富な資源を有している。",
     okinawa: "沖縄県（おきなわけん）は、日本の九州地方に位置する県。県庁所在地は那覇市。",
 }
 
@@ -122,28 +122,34 @@ function infoPickup(event) {
     //ポップアップ用のBox情報の要素、マウスカーソルを当てた際のイベント情報の取得とポップアップに挿入する要素作成を定義
     const intro = document.getElementById("intro");
     const point = event.srcElement;
-    const pushInfo = document.createElement("p");
+
+    //画像処理一式
+    const pushPop = document.createElement("figure")
+    pushPop.classList.add("image")
     const pushImg = document.createElement("img");
+    pushImg.setAttribute("src", imgObj[point["id"]]);
+    pushPop.appendChild(pushImg);
 
-    //ポップアップに挿入するタグ情報、テキスト情報の加工
-    pushInfo.classList.add("addInfo");
-    pushInfo.textContent = introObj[point["id"]];
-
-    //参考画像のクラス、スタイル定義
-    pushImg.classList.add("addImg");
-    pushImg.style.height = "200px";
-    pushImg.style.display = "block";
-    pushImg.style.margin = "auto";
+    //文字処理一式
+    const pushInfo = document.createElement("div");
+    pushInfo.classList.add("right");
+    const pushInfoTitle = document.createElement("span");
+    pushInfoTitle.classList.add("title");
+    const pushInfoAdv = document.createElement("p");
+    pushInfoAdv.classList.add("text");
+    pushInfoTitle.textContent = point.innerText;
+    pushInfoAdv.textContent = introObj[point["id"]];
+    pushInfo.appendChild(pushInfoTitle);
+    pushInfo.appendChild(pushInfoAdv);
 
     //ポップアップを可視化
     intro.style.visibility = (intro.style.visibility == "visible") ? "hidden" : "visible";
 
+    //ポップアップに画像を挿入
+    intro.appendChild(pushPop);
+
     //ポップアップに情報を挿入
     intro.appendChild(pushInfo);
-    pushImg.setAttribute("src", imgObj[point["id"]]);
-
-    //ポップアップに画像を挿入
-    intro.appendChild(pushImg);
 
     //タッチフラグをリターンする
     return 1;
@@ -154,15 +160,16 @@ function infoDelete() {
 
     //ポップアップ用のBox情報、ポップアップに挿入された要素を取得して定義
     const intro = document.getElementById("intro");
-    const popInfo = document.querySelector(".addInfo");
-    const popImg = document.querySelector(".addImg");
+    const popPop = document.querySelector(".image");
+    const popInfo = document.querySelector(".right");
+    // const popImg = document.querySelector(".Img");
 
     //ポップアップを非可視化
     intro.style.visibility = (intro.style.visibility == "visible") ? "hidden" : "visible";
 
     //ポップアップに挿入された情報の削除
+    intro.removeChild(popPop);
     intro.removeChild(popInfo);
-    intro.removeChild(popImg);
 
     //タッチフラグをリターンする
     return 0;
